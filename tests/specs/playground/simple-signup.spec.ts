@@ -14,6 +14,7 @@ test.describe('Simple Signup Flow - Automation Exercise', () => {
       tag: [TAGS.SMOKE, TAGS.UI],
     },
     async ({ homePage, signupLoginPage }) => {
+      // Adding a new comment
       // Navigate to signup/login page from home
       await homePage.openSignupLogin();
       
