@@ -1,7 +1,7 @@
 {
   "name": "playwright_autotests",
   "version": "1.0.0",
-  "description": "E2E tests with Playwright and TypeScript stack",
+  "description": "E2E tests with Playwright and stack",
   "main": "playwright.config.ts",
   "scripts": {
     "eslint:validate": "eslint .",
