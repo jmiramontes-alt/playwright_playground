@@ -1,0 +1,30 @@
+# Env
+.env
+.idea
+
+/tmp
+/out-tsc
+src/data/test-data/examFiles/tmp
+keys/
+
+/node_modules
+
+.vscode/*
+
+# Playwright
+node_modules/
+test-results.json
+test-results/
+playwright-report/
+playwright/.cache/
+**/tmp/**
+
+/keys
+
+# macOS system files
+.DS_Store
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/src/api/services/.cache/

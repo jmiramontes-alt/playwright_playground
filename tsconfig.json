@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": "./",
+    "types": ["@playwright/test", "node"],
+    "paths": {
+      "@api/*": ["src/api/*"],
+      "@common/*": ["src/common/*"],
+      "@support/*": ["src/common/data/test-data/*"],
+      "@constants/*": ["src/common/constants/*"],
+      "@fixtures/*": ["tests/fixtures/*"],
+      "@types/*": ["src/api/types/*"],
+      "@tests/*": ["tests/*"],
+      "@utils/*": ["src/common/utils/*"],
+      "@pages/*": ["src/ui/pages/*"],
+      "@pages": ["src/ui/pages/index"],
+      "@ui/*": ["src/ui/*"],
+      "@tags": ["src/common/constants/tags"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": false
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules"]
+}
