@@ -82,9 +82,9 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     await zipCode.fill('85641');
     await mobileNumber.fill('+541160296372');
     await createAccount.click();
-    //await expect(page.getByRole('heading', { level: 2 })).toHaveText('Account Created!');
-    await page.waitForTimeout(5000);
-    
+    await expect(page.getByRole('heading', { name: 'Account Created!' })).toBeVisible();
+    //await expect(page.locator('[data-qa="account-created"]')).toHaveText('Account Created!');
+    await page.waitForTimeout(5000);    
       },
   );
 
