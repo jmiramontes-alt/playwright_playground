@@ -1,12 +1,9 @@
-//import {expect ,page } from '@tests/fixtures/playground-fixtures';
-//import { TestDataProvider } from '@common/data/providers/test-data-provider';
-//import { SMOKE, UI } from '@tags';
 import {test, expect} from '@playwright/test';
 import {faker} from '@faker-js/faker';
 
 import {HomePage} from '../../../src/ui/pages/HomePage';
 import { SignupLoginPage } from '../../../src/ui/pages/SignupLoginPage';
-import { aq } from '@faker-js/faker/dist/airline-CLphikKp';
+
 
 test.describe('Automation Exercise - Basic User Flow', () => {
   
@@ -42,9 +39,6 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     const singUp = page.locator('[data-qa="signup-button"]');
     const title2 = page.locator('[id="id_gender1"]');
     const password = page.locator('[data-qa="password"]');
-    //const dayOfBirth = ('');
-    //const monthOfBirth= page.locator('');
-    //const yearOfBirth= page.locator('');
     const newsletter = page.locator('[id="newsletter"]');
     const specialOffers = page.locator('[id="optin"]');
     const firstName = page.locator('[data-qa="first_name"]');
@@ -52,14 +46,12 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     const company = page.locator('[data-qa="company"]');
     const address = page.locator('[data-qa="address"]');
     const address2 = page.locator('[data-qa="address2"]');
-    //const country = page.locator('');
     const state = page.locator('[data-qa="state"]');
     const city = page.locator('[data-qa="city"]');
     const zipCode = page.locator('[data-qa="zipcode"]');
     const mobileNumber = page.locator('[data-qa="mobile_number"]');
     const createAccount = page.locator('[data-qa="create-account"]');
     await homePage.openSignupLogin();
-    //await signupLoginPage.signUp('KennyZ','kenny@test.com');
     await singUpName.fill('Kenny');
     await singUpMail.fill(email);
     await singUp.click();
