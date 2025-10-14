@@ -1,7 +1,7 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export class SignupLoginPage extends BasePage {
+export class LoginPage extends BasePage {
   // “New User Signup!”
   readonly signupName: Locator;
   readonly signupEmail: Locator;

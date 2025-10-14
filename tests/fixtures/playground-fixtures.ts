@@ -1,7 +1,7 @@
 import { test as base } from '@playwright/test';
 import { HomePage } from '@pages/HomePage';
 import { ProductsPage } from '@pages/ProductsPage';
-import { SignupLoginPage } from '@pages/SignupLoginPage';
+import { SignupLoginPage } from '@pages/LoginPage';
 
 interface TestFixtures {
   homePage: HomePage;
