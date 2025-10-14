@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 import {faker} from '@faker-js/faker';
 
 import {HomePage} from '../../../src/ui/pages/HomePage';
-import { SignupLoginPage } from '../../../src/ui/pages/SignupLoginPage';
+import { LoginPage } from '../../../src/ui/pages/LoginPage';
 
 
 test.describe('Automation Exercise - Basic User Flow', () => {
@@ -16,14 +16,14 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     async ({page}) => {
       const homePage = new HomePage(page);
       await homePage.openSignupLogin();
-      const signupLoginPage = new SignupLoginPage(page);
+      const loginPage = new LoginPage(page);
       // Verify we're on the signup/login page
-      await expect(signupLoginPage.signupName).toBeVisible();
-      await expect(signupLoginPage.signupEmail).toBeVisible();
-      await expect(signupLoginPage.signupButton).toBeVisible();
-      await expect(signupLoginPage.loginEmail).toBeVisible();
-      await expect(signupLoginPage.loginPassword).toBeVisible();
-      await expect(signupLoginPage.loginButton).toBeVisible();
+      await expect(loginPage.signupName).toBeVisible();
+      await expect(loginPage.signupEmail).toBeVisible();
+      await expect(loginPage.signupButton).toBeVisible();
+      await expect(loginPage.loginEmail).toBeVisible();
+      await expect(loginPage.loginPassword).toBeVisible();
+      await expect(loginPage.loginButton).toBeVisible();
     },
   );
 
@@ -31,7 +31,7 @@ test.describe('Automation Exercise - Basic User Flow', () => {
   test(
     'Should fill in the data in the New User Signup!',
     async ({page}) =>{
-    const signupLoginPage = new SignupLoginPage(page);
+    const loginPage = new LoginPage(page);
     const homePage = new HomePage(page);
     const email = faker.internet.email();
     const singUpName= page.locator('[data-qa="signup-name"]');
