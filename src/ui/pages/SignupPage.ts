@@ -1,7 +1,8 @@
-import { Locator, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { IndexInfo } from 'typescript';
 import { User } from '@common/types/automation-exercise.types';
+
 
 export class SignupPage extends BasePage {
   // “Enter Account Information”
@@ -71,7 +72,6 @@ export class SignupPage extends BasePage {
   }
 
   async  fillOutForm(user:User) {
-    
     await this.zipCode.fill('85641');
     await this.title2.click();
     await this.password.fill(user.password);
@@ -79,7 +79,7 @@ export class SignupPage extends BasePage {
     await this.selectMonth('12');
     await this.selectYear('1964');
 //Scroll down a little bit to observe the fill in of the data
-    //await page.evaluate(() => window.scrollBy(0, 450));
+    await this.page.evaluate(() => window.scrollBy(0, 450));
     await this.newsletter.check();
     await this.specialOffers.check();
     await this.firstName.fill(user.firstname);
@@ -94,6 +94,10 @@ export class SignupPage extends BasePage {
     await this.mobileNumber.fill(user.mobile_number);
 //Create the Account
     await this.createAccount.click();
+//The assertion
+    await expect(this.page.getByRole('heading', { name: 'Account Created!' })).toBeVisible();
+//Waiting to see the results
+    await this.page.waitForTimeout(5000); 
 
 }
 

@@ -26,11 +26,8 @@ test(
     await loginPage.fillLogin(automationExerciseTestData.validUser);
 //Fill out info
     await singUpPage.fillOutForm(automationExerciseTestData.validUser)
-//The assertion
-    await expect(page.getByRole('heading', { name: 'Account Created!' })).toBeVisible();
-//Waiting to see the results
-    await page.waitForTimeout(5000);    
-      },
+   
+      }
   );
 
 
