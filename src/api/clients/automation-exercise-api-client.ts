@@ -9,7 +9,7 @@ import {
   ErrorResponse,
   User,
   API_ENDPOINTS,
-} from '@api/types/automation-exercise.types';
+} from '@common/types/automation-exercise.types';
 
 /**
  * API Client for Automation Exercise website

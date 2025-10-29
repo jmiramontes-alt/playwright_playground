@@ -1,5 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { User } from '@common/types/automation-exercise.types';
 
 export class LoginPage extends BasePage {
   // “New User Signup!”
@@ -22,8 +23,8 @@ export class LoginPage extends BasePage {
     this.loginEmail = page.locator('[data-qa="login-email"]');
     this.loginPassword = page.locator('[data-qa="login-password"]');
     this.loginButton = page.locator('[data-qa="login-button"]');
-  }
 
+  }
   async signUp(name: string, email: string): Promise<void> {
     await this.type(this.signupName, name, { clear: true });
     await this.type(this.signupEmail, email, { clear: true });
@@ -35,4 +36,14 @@ export class LoginPage extends BasePage {
     await this.type(this.loginPassword, password, { clear: true });
     await this.click(this.loginButton);
   }
+
+  async  fillLogin(user:User) {
+  
+    await this.signupName.fill(user.firstname);
+    await this.signupEmail.fill(user.email);
+    await this.signupButton.click();
+
+  
+  }
+
 }

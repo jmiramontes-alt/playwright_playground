@@ -36,12 +36,12 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     await loginPage.signupName.fill(userName);
     await loginPage.signupEmail.fill(email);
     await loginPage.signupButton.click();
+//Fill out info
     await singUpPage.title2.click();
     await singUpPage.password.fill(passWord);
     await singUpPage.selectDay('29');
     await singUpPage.selectMonth('12');
     await singUpPage.selectYear('1964');
-    await page.waitForTimeout(5000);   
 //Scroll down a little bit to observe the fill in of the data
     await page.evaluate(() => window.scrollBy(0, 450));
     await singUpPage.newsletter.check();
@@ -52,7 +52,6 @@ test.describe('Automation Exercise - Basic User Flow', () => {
     await singUpPage.address.fill('La Pampa 1385');
     await singUpPage.address2.fill('Entre migueletes y miñones');
     await singUpPage.selectCountry('New Zealand')
-    //await page.selectOption('#country','New Zealand');
     await singUpPage.state.fill('Arizona');
     await singUpPage.city.fill('Tucson');
     await singUpPage.zipCode.fill('85641');

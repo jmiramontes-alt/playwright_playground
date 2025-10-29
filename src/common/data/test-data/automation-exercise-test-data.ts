@@ -1,4 +1,7 @@
-import { User } from '@api/types/automation-exercise.types';
+import { User } from '@common/types/automation-exercise.types';
+import { faker } from '@faker-js/faker';
+
+
 
 /**
  * Test data for Automation Exercise API tests
@@ -7,23 +10,23 @@ import { User } from '@api/types/automation-exercise.types';
 export const automationExerciseTestData = {
   // Valid user data for testing
   validUser: {
-    name: 'Test User',
-    email: `testuser${Date.now()}@example.com`,
-    password: 'password123',
+    name: faker.person.firstName(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
     title: 'Mr',
     birth_date: '15',
     birth_month: '5',
     birth_year: '1990',
-    firstname: 'Test',
-    lastname: 'User',
-    company: 'Test Company',
-    address1: '123 Test Street',
+    firstname: faker.person.firstName(),
+    lastname: faker.person.lastName(),
+    company: 'Eurozona.SA',
+    address1: 'La Pampa 1385',
     address2: 'Apt 456',
-    country: 'United States',
-    zipcode: '12345',
-    state: 'California',
-    city: 'Los Angeles',
-    mobile_number: '1234567890',
+    country: 'New Zealand',
+    zipcode: '85641',
+    state: 'Arizona',
+    city: 'Tucson',
+    mobile_number: faker.phone.number({ style: 'international' }),
   } as User,
 
   // Invalid user data for negative testing

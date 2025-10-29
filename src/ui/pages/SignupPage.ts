@@ -1,6 +1,7 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { IndexInfo } from 'typescript';
+import { User } from '@common/types/automation-exercise.types';
 
 export class SignupPage extends BasePage {
   // “Enter Account Information”
@@ -46,13 +47,9 @@ export class SignupPage extends BasePage {
     this.mobileNumber= page.locator('[data-qa="mobile_number"]');
     this.createAccount= page.locator('[data-qa="create-account"]');
     this.days= page.locator('[data-qa="days"]');
-    //this.dayOption = (index: number) => page.locator(`[data-qa="days"] :nth-child(${index})`);
     this.month= page.locator('[data-qa="months"]');
-    //this.monthOption = (index: number) => page.locator(`[data-qa="months"] :nth-child(${index})`)
     this.year= page.locator('[data-qa="years"]');
-    //this.yearOption = (value: string) => page.locator(`//option[text()="${value}"]`);
     this.country = page.locator('[data-qa="country"]')
-    //this.countryOption = (value:string) => page.locator(`//option [text()="${value}"]`);
 
   }
 
@@ -72,4 +69,33 @@ export class SignupPage extends BasePage {
   async selectCountry (country:string){
     await this.country.selectOption(country);
   }
+
+  async  fillOutForm(user:User) {
+    
+    await this.zipCode.fill('85641');
+    await this.title2.click();
+    await this.password.fill(user.password);
+    await this.selectDay('29');
+    await this.selectMonth('12');
+    await this.selectYear('1964');
+//Scroll down a little bit to observe the fill in of the data
+    //await page.evaluate(() => window.scrollBy(0, 450));
+    await this.newsletter.check();
+    await this.specialOffers.check();
+    await this.firstName.fill(user.firstname);
+    await this.lastName.fill(user.lastname);
+    await this.company.fill(user.company);
+    await this.address.fill(user.address1);
+    await this.address2.fill(user.address2);
+    await this.selectCountry(user.country)
+    await this.state.fill(user.state);
+    await this.city.fill(user.city);
+    await this.zipCode.fill(user.zipcode);
+    await this.mobileNumber.fill(user.mobile_number);
+//Create the Account
+    await this.createAccount.click();
+
+}
+
+
 }

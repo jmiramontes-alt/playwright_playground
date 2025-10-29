@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { AutomationExerciseApiClient } from '@api/clients/automation-exercise-api-client';
 import { automationExerciseTestData } from '@common/data/test-data/automation-exercise-test-data';
 import { TAGS } from '@common/constants/tags';
-import { Product, Brand, RESPONSE_CODES } from '@api/types/automation-exercise.types';
+import { Product, Brand, RESPONSE_CODES } from '@common/types/automation-exercise.types';
 
 test.describe('Automation Exercise - Products & Brands API Tests', () => {
   let apiClient: AutomationExerciseApiClient;

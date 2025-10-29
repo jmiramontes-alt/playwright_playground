@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
     "baseUrl": "./",
     "types": ["@playwright/test", "node"],
     "paths": {
@@ -23,7 +23,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "skipLibCheck": true
   },
   "include": ["**/*"],
   "exclude": ["node_modules"]
