@@ -3,7 +3,6 @@ import { BasePage } from './BasePage';
 import { IndexInfo } from 'typescript';
 import { User } from '@common/types/automation-exercise.types';
 
-
 export class SignupPage extends BasePage {
   // “Enter Account Information”
   readonly title2: Locator;
@@ -28,8 +27,6 @@ export class SignupPage extends BasePage {
   readonly yearOption: (value: string) => Locator;
   readonly country: Locator;
   readonly countryOption: (value: string) => Locator;
-
-
 
   constructor(page: Page) {
     super(page);
@@ -72,6 +69,7 @@ export class SignupPage extends BasePage {
   }
 
   async  fillOutForm(user:User) {
+
     await this.zipCode.fill('85641');
     await this.title2.click();
     await this.password.fill(user.password);
